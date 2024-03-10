@@ -43,13 +43,18 @@ class Main{
             
             } catch (ArrayIndexOutOfBoundsException e) {
                 System.out.println(e.getMessage());
-            
-            }catch (Exception e) {
-                // TODO: handle exception
+            } catch (DayException e) {
+                System.out.println(e.getMessage());
+            } catch (MonthException e) {
+                System.out.println(e.getMessage());
+            } catch (YearException e) {
+                System.out.println(e.getMessage());
             }
-            
-
+        catch (Exception e) {
+                System.out.println("An unexpected error occurred. Please try again.");
+            }
         }
+        theScan.close();
 
     }
     private static void validateDay(int month, int day, int year) throws DayException {
